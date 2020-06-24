@@ -1,0 +1,224 @@
+.page{
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+}
+a:hover{
+    text-decoration: none;
+}
+.navtop{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left:0;
+    padding: 7px 16px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e8e8e8;
+    background-color: #fff;
+    z-index: 1; 
+    display: flex;
+    align-items: center;
+}
+.navtop button:not(.searchbutton),
+.navtop .profilebuttons img{
+    cursor: pointer;
+    padding: 8px;
+    height: 42px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+}
+.navtop .search{
+    margin: 0 40px;
+    flex: 1;
+    display: flex;
+}
+.navtop button img {
+    width: 100%;
+}
+.navtop .search form{
+    display: flex;
+    flex: 1;
+}
+.navtop .search .searchbar{
+    flex:1;
+    max-width: 600px;
+    color: #111;
+    padding: 2px 6px;
+    font-size: 14px;
+    font-weight: 100;
+    border: 1px solid #ccc;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-right: none;
+    height: 32px;
+    box-shadow: #eee 0px 1px 2px 0px inset;
+}
+.navtop .search .searchbutton{
+    height: 32px;
+    background-color: #f8f8f8;
+    border: 1px solid #d3d3d3;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    cursor: pointer;
+    width: 65px;
+}
+.navtop .search .searchbutton img{
+    height: 20px;
+    width: 20px;
+}
+.logo{
+     width: 150px;
+}
+.logo img{
+    height: 25px;
+    margin-left: 8px;
+}
+.sidebar{
+    width: 240px;
+    background-color: #f5f5f5;
+    padding-top: 60px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+.mainpage{
+    padding-top: 60px;
+    display: flex;
+}
+.mainpage.leftPadding {
+    padding-left: 250px;
+}
+
+.maincontent {
+    padding: 10px 30px;
+    display: flex;
+    flex: 1;
+}
+
+.panel{
+    flex-grow: 1;
+    min-height: 300px;
+    min-width: 200px;
+    background-color: white;
+    box-shadow: rgba(0,0,0,0.1)0 1px 2px;
+    padding: 20px;
+}
+
+.signInContainer{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    background-color: #efefee;
+    align-items: center;
+}
+
+.signInContainer .column .header img{
+    width: 100px;
+}
+
+.signInContainer .column{
+    flex-grow: 0;
+    width: 450px;
+    padding: 20px 35px;
+    max-height: 100%;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+.signInContainer .column .header{
+    padding: 20px 0;
+}
+
+.signInContainer .column .header .h3{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    margin: 0;
+    padding-bottom: 0;
+    padding-top: 60px;
+}
+
+.signInContainer .column .header span {
+    font-size: 14px;
+}
+
+.signInContainer .column form{
+    display: flex;
+    flex-direction: column;
+}
+
+.signInContainer .column form input[type="text"],
+.signInContainer .column form input[type="email"],
+.signInContainer .column form input[type="password"]{
+    font-size: 14px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #dedede;
+}
+
+.signInContainer .column form input[type="submit"]{
+    background: #4285f4;
+    color: #fff;
+    height: 36px;
+    width: 88px;
+    border: none;
+    border-radius: 3px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.signInMessage{
+    font-size:14px;
+    font-weight: 400;
+    color: #212529;
+}
+
+.errorMessage{
+    color: #f00;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.watchLeft{
+    flex: 1;
+}
+
+.watchLeft .videoPlayer{
+    width: 100%;
+}
+
+.suggestions{
+    max-width: 425px;
+    flex-grow: 1;
+    height: 100%;
+    padding-left: 24px;
+}
+
+.videoInfo{
+    width: 100%;
+    padding: 20px 0 8px 0;
+}
+
+.videoInfo h1{
+    display: block;
+    overflow: hidden;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.videoInfo .bottomSection{
+    display: flex;
+}
+
+.videoInfo .bottomSection .viewCount{
+    color: rgba(17,17,17,0.6);
+    font-size: 16px;
+    flex: 1;
+}
