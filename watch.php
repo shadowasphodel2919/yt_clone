@@ -10,7 +10,7 @@ $video=new Video($con,$_GET["id"],$userLoggedInObj);
 $video->incrementViews();
 //echo $video->getTitle();
 ?>
-
+<script src="VideoPlayerActions.js"></script>
 <div class="watchLeft">
     <?php $videoPlayer=new VideoPlayer($video);
     echo $videoPlayer->create(true);//CREATING THE VIDEO PLAYER USING CODE FROM A DIFFERENT PATH
