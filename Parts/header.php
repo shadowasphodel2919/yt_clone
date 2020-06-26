@@ -1,6 +1,6 @@
 <?php include 'config.php';
 include 'classes/User.php';
-include 'Parts/classes/Video.php';
+include 'classes/Video.php';
 
 $usernameLoggedIn= isset($_SESSION["userLoggedIn"])?$_SESSION["userLoggedIn"]:"";
 $userLoggedInObj=new User($con,$usernameLoggedIn);
