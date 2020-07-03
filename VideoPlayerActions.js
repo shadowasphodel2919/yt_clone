@@ -26,10 +26,6 @@ function likeVideo(button,videoId){
     });
     
 }
-function updateLikesValue(element, num) {
-    var likesCountVal = element.text() || 0;
-    element.text(parseInt(likesCountVal) + parseInt(num));
-}
 
 function dislikeVideo(button, videoId) {
     $.post("ajax/dislikeVideo.php", {videoId: videoId})
@@ -55,4 +51,9 @@ function dislikeVideo(button, videoId) {
 
         likeButton.find("img:first").attr("src", "images/icons/thumb-up.png");
     });
+}
+
+function updateLikesValue(element, num) {
+    var likesCountVal = element.text() || 0;
+    element.text(parseInt(likesCountVal) + parseInt(num));
 }
