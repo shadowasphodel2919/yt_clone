@@ -7,7 +7,7 @@ class ButtonProvider{
         //Change action if needed
         return "<button class='$class' onclick='$action'>"
                 . "$image"
-                . "<span>$text</span>"
+                . "<span class='text'>$text</span>"
                 . "</button>";
     }
 }
