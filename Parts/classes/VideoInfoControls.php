@@ -24,6 +24,9 @@ class VideoInfoControls{
         $imagesrc="images/icons/thumb-up.png";
         
         //Change button img when clicked
+        if($this->video->wasLikedBy()) {
+            $imagesrc = "images/icons/thumb-up-active.png";
+        }
         return ButtonProvider::createButton($text, $imagesrc, $action, $class);
     }
     
@@ -35,6 +38,9 @@ class VideoInfoControls{
         $imagesrc="images/icons/thumb-down.png";
         
         //Change button img when clicked
+        if($this->video->wasDislikedBy()) {
+            $imagesrc = "images/icons/thumb-down-active.png";
+        }
         return ButtonProvider::createButton($text, $imagesrc, $action, $class);
     }
     
