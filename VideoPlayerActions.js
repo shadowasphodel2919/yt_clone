@@ -37,11 +37,11 @@ function dislikeVideo(button, videoId) {
         dislikeButton.addClass("active");
         likeButton.removeClass("active");
 
-        //var result = JSON.parse(data);
-        updateLikesValue(likeButton.find(".text"), JSON.parse(data).likes);
-        updateLikesValue(dislikeButton.find(".text"), JSON.parse(data).dislikes);
+        var result = JSON.parse(data);
+        updateLikesValue(likeButton.find(".text"), result.likes);
+        updateLikesValue(dislikeButton.find(".text"), result.dislikes);
 
-        if(JSON.parse(data).dislikes < 0) {
+        if(result.dislikes < 0) {
             dislikeButton.removeClass("active");
             dislikeButton.find("img:first").attr("src", "images/icons/thumb-down.png");
         }
@@ -52,7 +52,6 @@ function dislikeVideo(button, videoId) {
         likeButton.find("img:first").attr("src", "images/icons/thumb-up.png");
     });
 }
-
 function updateLikesValue(element, num) {
     var likesCountVal = element.text() || 0;
     element.text(parseInt(likesCountVal) + parseInt(num));

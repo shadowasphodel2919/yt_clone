@@ -4,7 +4,6 @@ include '../Parts/classes/Video.php';
 include '../Parts/classes/User.php';
 
 $username = $_SESSION["userLoggedIn"];
-//$username = $userLoggedInObj->getName();
 $videoId = $_POST["videoId"];
 
 $userLoggedInObj = new User($con, $username);
