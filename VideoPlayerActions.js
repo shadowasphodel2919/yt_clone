@@ -30,7 +30,7 @@ function likeVideo(button,videoId){
 function dislikeVideo(button, videoId) {
     $.post("ajax/dislikeVideo.php", {videoId: videoId})
     .done(function(data) {
-        
+        console.log(data);
         var dislikeButton = $(button);
         var likeButton = $(button).siblings(".likeButton");
 

@@ -19,7 +19,7 @@ $video->incrementViews();
     ?>
 </div>
 <div class="suggestions">
-    taha
+    
 </div>
 
 <?php include 'Parts/footer.php';?>
