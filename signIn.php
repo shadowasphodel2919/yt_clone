@@ -39,7 +39,7 @@ function getInputValue($name){
         <div class="signInContainer">
             <div class="column">
                 <div class="header">
-                    <img src="images/icons/VideoTubeLogo.png">
+                    <img src="images/icons/YouTubeLogo.png">
                     <h3>Sign In</h3>
                     <span>to continue to YouTube</span>
                 </div>

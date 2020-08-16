@@ -1,6 +1,14 @@
 <?php include 'config.php';
+//include 'classes/ButtonProvider.php';
 include 'classes/User.php';
 include 'classes/Video.php';
+include 'classes/VideoGrid.php';
+include 'classes/VideoGridItem.php';
+include 'classes/SubscriptionsProvider.php';
+require_once 'classes/ButtonProvider.php';
+include 'classes/NavigationMenuProvider.php';
+
+//session_destroy();
 
 $usernameLoggedIn= User::isLoggedIn()?$_SESSION["userLoggedIn"]:"";
 $userLoggedInObj=new User($con,$usernameLoggedIn);
@@ -26,7 +34,7 @@ $userLoggedInObj=new User($con,$usernameLoggedIn);
                     <img src="images/icons/menu.png">
                 </button>
                 <a class="logo" href="index.php">
-                    <img src="images/icons/VideoTubeLogo.png">
+                    <img src="images/icons/YouTubeLogo.png">
                 </a>
                 <div class="search">
                     <form action="search.php" method="GET">
@@ -37,17 +45,23 @@ $userLoggedInObj=new User($con,$usernameLoggedIn);
                     </form>
                 </div>
                 <div class="profilebuttons">
-                    <a href="upload.php">
-                        <img class="upload"src="images/icons/upload.png">
-                    </a>
-                    <a href="#">
-                        <!--we have to change profiles if user has signed in therefore empty right now-->
-                        <img class="profilepic" src="images/profilePictures/default.png">
-                    </a>
+                    <?php 
+                    if(User::isLoggedIn()){
+                       echo "<a href='upload.php'>
+                        <img class='upload'src='images/icons/upload.png'>
+                    </a>";
+                    }
+                    ?>
+                    <?php
+                    echo ButtonProvider::createProfileNavigationButton($con, $userLoggedInObj->getUsername());
+                    ?>
                 </div>
             </div>
             <div class="sidebar" style="display: none">
-                   
+                 <?php
+                 $navProvider=new NavigationMenuProvider($con, $userLoggedInObj);
+                 echo $navProvider->create();
+                 ?>  
             </div>
             <div class="mainpage">
                 

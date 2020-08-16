@@ -64,4 +64,24 @@ class ButtonProvider{
                     $button
                 </div>";
     }
+    
+    public static function createProfileNavigationButton($con,$username){
+        if(User::isLoggedIn()){
+            return ButtonProvider::createUserProfileButton($con, $username);
+        }
+        else{
+            return "<a href='signIn.php'>"
+            . "<span class='signInLink'>SIGN IN</span>"
+                    . "</a>";
+        }
+    }
+    
+    public static function createSignInLink(){
+        $profilePic='images/profilePictures/default.png';
+        $link="signIn.php";
+        
+        return "<a href='$link'>
+                    <img src='$profilePic' class='profilePicture'>
+                </a>";
+    }
 }

@@ -1,5 +1,5 @@
 <?php
-include 'Parts/classes/ButtonProvider.php';
+//include 'Parts/classes/ButtonProvider.php';
 class VideoInfoControls{
     private $video,$userLoggedInObj;
     

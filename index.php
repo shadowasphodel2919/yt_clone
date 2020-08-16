@@ -1,12 +1,18 @@
 <?php include 'Parts/header.php';?>
 
-<?php 
-if(isset($_SESSION["userLoggedIn"])){
-    echo "user is logged in as ".$userLoggedInObj->getName();
-}
-else{
-    echo "not logged in";
-}
-?>
+<div class="videoSection">
+    <?php
+    
+    $subscriptionsProvider=new SubscriptionsProvider($con, $userLoggedInObj);
+    $subscriptionVideos=$subscriptionsProvider->getVideos();
+    
+    $videoGrid=new VideoGrid($con, $userLoggedInObj);
+    
+    if(User::isLoggedIn() && sizeof($subscriptionVideos)>0){
+        echo $videoGrid->create($subscriptionVideos, "Subscriptions", false);
+    }
+    echo $videoGrid->create(null,"Recommended for you",false);
+    ?>
+</div>
 
 <?php include 'Parts/footer.php';?>
